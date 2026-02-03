@@ -3,32 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consult - Contact Form</title>
+    <title>23jn0100Consult - チャンヴァンマイン</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        form { max-width: 400px; }
-        div { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input, textarea { width: 100%; padding: 8px; }
-        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        /* CSS để trang web trông chuyên nghiệp hơn */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        h1 {
+            color: #0078d4;
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Quan trọng để không bị tràn khung */
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: #0078d4;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
     </style>
 </head>
 <body>
-    <h2>お問い合わせ (Contact Us)</h2>
-    <form action="contact.php" method="POST">
-        <div>
-            <label>氏名 (Họ tên):</label>
-            <input type="text" name="name" required>
-        </div>
-        <div>
-            <label>メール (Email):</label>
-            <input type="email" name="email" required>
-        </div>
-        <div>
-            <label>お問い合わせ内容 (Nội dung):</label>
-            <textarea name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit">送信 (Gửi)</button>
+
+<div class="container">
+    <h1>お問い合わせフォーム</h1>
+    <div class="info">
+        <p>氏名: チャン ヴァン マイン</p>
+        <p>学籍番号: 23jn0325</p>
+    </div>
+
+    <form action="submit.php" method="POST">
+        <label for="name">お名前 (Họ tên):</label>
+        <input type="text" id="name" name="student_name" placeholder="例: チャン ヴァン マイン" required>
+
+        <label for="email">メールアドレス (Email):</label>
+        <input type="email" id="email" name="student_email" placeholder="example@mail.com" required>
+
+        <label for="message">相談内容 (Nội dung tư vấn):</label>
+        <textarea id="message" name="content" rows="4" placeholder="ご自由に入力してください" required></textarea>
+
+        <button type="submit">送信する (Gửi đi)</button>
     </form>
+</div>
+
 </body>
 </html>
